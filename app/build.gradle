@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion as Integer
-    buildToolsVersion rootProject.ext.buildToolsVersion as String
+
+    compileSdkVersion 22
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "com.github.hiteshsondhi88.sampleffmpeg"
-        minSdkVersion rootProject.ext.minSdkVersion as Integer
-        targetSdkVersion rootProject.ext.targetSdkVersion as Integer
-        versionCode rootProject.ext.versionCode as Integer
-        versionName rootProject.ext.versionName as String
+        targetSdkVersion 22
+        minSdkVersion 16
+        versionCode 28
+        versionName "0.3.2"
     }
 
     sourceSets.main {
@@ -31,10 +31,6 @@ android {
 }
 
 dependencies {
-    compile 'com.squareup.dagger:dagger-compiler:1.2.2'
-    compile 'com.squareup.dagger:dagger:1.2.2'
-    compile 'com.jakewharton:butterknife:5.1.2'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
-    compile project(':FFmpegAndroid')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':FFmpegAndroid')
 }

@@ -12,6 +12,7 @@ import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegNotSupportedExceptio
 @SuppressWarnings("unused")
 public class FFmpeg implements FFmpegInterface {
 
+    private final String TAG = "FFMPEG";
     private final Context context;
     private FFmpegExecuteAsyncTask ffmpegExecuteAsyncTask;
     private FFmpegLoadLibraryAsyncTask ffmpegLoadLibraryAsyncTask;
@@ -36,6 +37,7 @@ public class FFmpeg implements FFmpegInterface {
     @Override
     public void loadBinary(FFmpegLoadBinaryResponseHandler ffmpegLoadBinaryResponseHandler) throws FFmpegNotSupportedException {
         String cpuArchNameFromAssets = null;
+        Log.d("Requested Arch: "+CpuArchHelper.getCpuArch());
         switch (CpuArchHelper.getCpuArch()) {
             case x86:
                 Log.i("Loading FFmpeg for x86 CPU");
